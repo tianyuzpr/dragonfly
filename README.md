@@ -5,6 +5,10 @@
 [![Contributing](https://img.shields.io/badge/contributing-welcome-brightgreen.svg)](CONTRIBUTING.md)
 <!-- [![Official-Site](https://img.shields.io/badge/Official-Site-Yes-green.svg)](https://dragonfly.org/) Official site not yet built, keep commented -->
 
+> 🚧 **Project Status: Early Planning / Conceptual Validation Phase**
+> DragonFlyOS is currently in the design and technical pre-research phase. **No installable images are available yet**.
+> If you are interested in contributing to the design, code contribution, or architecture discussion, please join us!
+
 > ⚠️ This page is translated by AI in Chinese. If you find any errors, please report them in the issue tracker. If you want to get the correct version, please go to the [Chinese README](README-CN.md).
 
 English | [简体中文](README-CN.md)
@@ -54,3 +58,7 @@ Reasons for choosing this license:
 
 ## Contribution Guidelines
 See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Contact Us
+- Email: [xiayue1052@outlook.com](mailto:xiayue1052@outlook.com)
+- QQ: [1103943279](https://qm.qq.com/q/rwBhWnsQUg)
