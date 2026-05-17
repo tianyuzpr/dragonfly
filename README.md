@@ -30,7 +30,9 @@ DragonFlyOS is a Linux distribution based on Fedora, providing a secure, indepen
    ```
 3. Run the project
    ```bash
-   python main.py
+   python ./src/main.py
+    or directly
+   ./Scripts/build
    ```
 4. Burn to USB drive
     - Ensure the USB drive is formatted as FAT32
