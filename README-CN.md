@@ -1,6 +1,6 @@
 # DragonFlyOS - 一个基于Fedora，自主可控且开源的 Linux 发行版！
 
-[![License](https://img.shields.io/badge/license-GPL-v3-brightgreen.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-FreeSoftware-red.svg)](https://www.fsf.org/)
 [![Contributing](https://img.shields.io/badge/contributing-welcome-brightgreen.svg)](CONTRIBUTING.md)
 <!-- [![Official-Site](https://img.shields.io/badge/Official-Site-Yes-green.svg)](https://dragonfly.org/) 官网未搭建完成，遂注释，请勿删除  -->
