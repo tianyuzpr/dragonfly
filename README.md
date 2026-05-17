@@ -1,6 +1,6 @@
 # DragonFlyOS - A Fedora-based, Independent & Open Source Linux Distribution!
 
-[![License](https://img.shields.io/badge/license-GPL-v3-brightgreen.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-FreeSoftware-red.svg)](https://www.fsf.org/)
 [![Contributing](https://img.shields.io/badge/contributing-welcome-brightgreen.svg)](CONTRIBUTING.md)
 <!-- [![Official-Site](https://img.shields.io/badge/Official-Site-Yes-green.svg)](https://dragonfly.org/) Official site not yet built, keep commented -->
