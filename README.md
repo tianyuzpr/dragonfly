@@ -62,3 +62,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 ## Contact Us
 - Email: [xiayue1052@outlook.com](mailto:xiayue1052@outlook.com)
 - QQ: [1103943279](https://qm.qq.com/q/rwBhWnsQUg)
+- QQ Password：`dragonflylinux`(case sensitive)
