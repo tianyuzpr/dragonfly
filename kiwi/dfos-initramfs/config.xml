@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2026 Xiayue
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  SPDX-License-Identifier: Apache-2.0
+-->
+<image schemaversion="8.5" name="dfos-initramfs-demo">
+  <description type="system">
+    <author>Xiayue</author>
+    <contact>xiayue1052@outlook.com</contact>
+    <specification>DFOS stage-1 demo: boot to initramfs shell only. No desktop, no installer. Package signature check disabled: local-only build, not for distribution.</specification>
+  </description>
+  <preferences>
+    <version>0.1.0</version>
+    <packagemanager>dnf5</packagemanager>
+    <timezone>Asia/Shanghai</timezone>
+    <rpm-check-signatures>false</rpm-check-signatures>
+    <rpm-excludedocs>true</rpm-excludedocs>
+    <type image="ext4">
+      <size unit="G">2</size>
+    </type>
+  </preferences>
+  <repository type="rpm-md" alias="fedora" priority="1" package_gpgcheck="false">
+    <source path="https://mirrors.tuna.tsinghua.edu.cn/fedora/releases/45/Everything/x86_64/os/"/>
+  </repository>
+  <repository type="rpm-md" alias="fedora-updates" priority="2" package_gpgcheck="false">
+    <source path="https://mirrors.tuna.tsinghua.edu.cn/fedora/updates/45/Everything/x86_64/"/>
+  </repository>
+  <packages type="bootstrap">
+    <package name="filesystem"/>
+    <package name="glibc-langpack-en"/>
+    <package name="rpm"/>
+    <package name="tar"/>
+  </packages>
+  <packages type="image">
+    <package name="systemd"/>
+    <package name="systemd-udev"/>
+    <package name="kernel-core"/>
+    <package name="dracut"/>
+    <package name="busybox"/>
+    <package name="e2fsprogs"/>
+    <package name="util-linux"/>
+    <package name="tzdata"/>
+    <package name="shadow-utils"/>
+    <package name="grub2-pc"/>
+    <package name="grub2-tools"/>
+  </packages>
+</image>
