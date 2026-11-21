@@ -1,13 +1,15 @@
 # DragonFlyOS - A Fedora-based, Independent & Open Source Linux Distribution!
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-FreeSoftware-red.svg)](https://www.fsf.org/)
+[![Status](https://img.shields.io/badge/status-stage--1%20demo-orange.svg)](docs/10-demo-plan.md)
 [![Contributing](https://img.shields.io/badge/contributing-welcome-brightgreen.svg)](CONTRIBUTING.md)
 <!-- [![Official-Site](https://img.shields.io/badge/Official-Site-Yes-green.svg)](https://dragonfly.org/) Official site not yet built, keep commented -->
 
-> 🚧 **Project Status: Early Planning / Conceptual Validation Phase**
-> DragonFlyOS is currently in the design and technical pre-research phase. **No installable images are available yet**.
-> If you are interested in contributing to the design, code contribution, or architecture discussion, please join us!
+> 🚧 **Project Status: Stage-1 demo boots (2026-11-21)**
+> A kiwi-built Fedora 45 image now boots under QEMU and reaches a serial login prompt
+> (kernel `7.2.11-300.fc45.x86_64`).
+> **There is no ISO, no desktop environment and no installer yet, and no images are distributed.**
+> Build procedure and measured output: [docs/10-demo-plan.md](docs/10-demo-plan.md).
 
 > ⚠️ This page is translated by AI in Chinese. If you find any errors, please report them in the issue tracker. If you want to get the correct version, please go to the [Chinese README](README-CN.md).
 
@@ -22,30 +24,38 @@ DragonFlyOS is a Linux distribution based on Fedora, providing a secure, indepen
 - Compared to OpenHarmony, DragonFlyOS leverages the mature Linux ecosystem, offering broader software compatibility.
 - Compared to other Linux distributions, DragonFlyOS provides a more secure and controllable environment.
 
-## Installation Guide
-1. Clone the project locally
-   ```bash
-   git clone https://github.com/dragonflyos/dragonfly.git
-   ```
-2. Install dependencies
-   ```bash
-   cd dragonfly
-   pip install -r requirements.txt
-   ```
-3. Run the project
-   ```bash
-   python ./src/main.py
-    or directly
-   ./Scripts/build
-   ```
-4. Burn to USB drive
-    - Ensure the USB drive is formatted as FAT32
-    - Ensure the USB drive is plugged into the system
-    - Ensure the USB device path is correct
-    - ⚠️ This operation will format the USB drive, all data will be lost!
-   ```bash
-   sudo dd if=./dist/dragonfly.iso of=<your-usb-device-path> bs=16M status=progress
-   ```
+## Building and Running (Stage 1)
+
+The current artifact is a **2 GiB ext4 filesystem image** with no partition table and no bootloader,
+so it is started by handing the kernel and initramfs to QEMU directly. There is no ISO and nothing to
+write to a USB stick yet.
+
+Requirements: a Linux host (WSL2 works), `podman`, `qemu-system-x86_64`, and roughly 8 GiB of free RAM.
+
+```bash
+git clone https://github.com/tianyuzpr/dragonfly.git
+cd dragonfly
+
+# 1. Fedora 45 container with kiwi (--privileged and /dev are required)
+podman run -dit --privileged -v /dev:/dev -v "$PWD:/work" \
+  --name dfos-builder registry.fedoraproject.org/fedora:45
+podman exec dfos-builder dnf install -y kiwi-cli \
+  kiwi-systemdeps-disk-images kiwi-systemdeps-bootloaders
+
+# 2. build
+podman exec dfos-builder kiwi-ng system build \
+  --description /work/kiwi/dfos-initramfs --target-dir /work/out
+
+# 3. boot (KVM; drop -accel kvm if unavailable)
+qemu-system-x86_64 -accel kvm -m 1024 -smp 2 \
+  -kernel vmlinuz -initrd initramfs.img \
+  -drive file=out/dfos-initramfs-demo.x86_64-0.1.0.ext4,format=raw,if=virtio \
+  -append "root=/dev/vda rw console=ttyS0" -nographic
+```
+
+The demo image ships a known root password (`dfos`) for serial-console verification only.
+Full procedure, the four build-environment workarounds and the measured numbers are in
+[docs/10-demo-plan.md](docs/10-demo-plan.md).
 
 ## License
 [Apache-2.0](LICENSE)

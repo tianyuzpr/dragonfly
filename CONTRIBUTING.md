@@ -8,6 +8,17 @@ English | [简体中文](CONTRIBUTING-CN.md)
 
 We warmly welcome you to contribute to the project. However, there are some guidelines we would like you to understand.
 
+## Repository Layout
+
+| Path | Purpose |
+|---|---|
+| `kiwi/` | kiwi image descriptions (image build definitions) |
+| `docs/` | design and process documents; `docs/10-demo-plan.md` is the current state of the project |
+| `src/` | Python sources; currently only a placeholder entry point |
+
+The project is at stage 1: a bootable Fedora 45 image is built with kiwi and verified under QEMU.
+There is no desktop environment, installer or ISO yet.
+
 ## Pull Request
 
 Before creating any Pull Request, please read the following guidelines:
