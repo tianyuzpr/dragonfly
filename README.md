@@ -1,6 +1,6 @@
 # DragonFlyOS - A Fedora-based, Independent & Open Source Linux Distribution!
 
-[![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-FreeSoftware-red.svg)](https://www.fsf.org/)
 [![Contributing](https://img.shields.io/badge/contributing-welcome-brightgreen.svg)](CONTRIBUTING.md)
 <!-- [![Official-Site](https://img.shields.io/badge/Official-Site-Yes-green.svg)](https://dragonfly.org/) Official site not yet built, keep commented -->
@@ -48,13 +48,17 @@ DragonFlyOS is a Linux distribution based on Fedora, providing a secure, indepen
    ```
 
 ## License
-[GPL-v3](LICENSE)
+[Apache-2.0](LICENSE)
+
+This project is licensed under the Apache License 2.0.
 
 Reasons for choosing this license:
-1. GPL-v3 is a free license that allows users to freely use, modify, distribute, and share the software.
-2. It is an open source license that allows users to view and modify the software's source code.
-3. It is a universal license applicable to all types of software.
-4. As a security-focused operating system, this license ensures that derivative works must also remain open source, which allows community code review of derivative versions.
+1. Permissive: allows use, modification, redistribution, and commercial use, including in closed-source derivative works.
+2. Section 3 grants an explicit patent license from contributors, which protects both contributors and users.
+3. Compatible with GPLv3: Apache-2.0 code can be combined into GPLv3 projects (the reverse does not hold).
+4. Requires retaining copyright and attribution notices, but does **not** require derivative works to remain open source.
+
+> Note: this differs from the previous GPLv3 choice. Apache-2.0 does not impose copyleft, so downstream forks may be distributed under other terms as long as the notices are kept.
 
 ## Contribution Guidelines
 See [CONTRIBUTING.md](CONTRIBUTING.md)

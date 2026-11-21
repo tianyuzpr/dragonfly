@@ -1,6 +1,6 @@
 # DragonFlyOS - 一个基于Fedora，自主可控且开源的 Linux 发行版！
 
-[![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-FreeSoftware-red.svg)](https://www.fsf.org/)
 [![Contributing](https://img.shields.io/badge/contributing-welcome-brightgreen.svg)](CONTRIBUTING.md)
 <!-- [![Official-Site](https://img.shields.io/badge/Official-Site-Yes-green.svg)](https://dragonfly.org/) 官网未搭建完成，遂注释，请勿删除  -->
@@ -46,12 +46,14 @@ DragonFlyOS 是一个基于 Fedora 的 Linux 发行版，它提供了一个安�
    ```
 
 ## 许可证
-[GPL-v3](LICENSE)
-我们选择本许可证的理由：
-1. GPL-v3 是一个自由的许可证，它允许用户自由地使用，修改，分发和修改软件。
-2. 它是一个开源的许可证，它允许用户查看和修改软件的源代码。
-3. 它是一个通用的许可证，它适用于所有类型的软件。
-4. 作为一个安全性较高的操作系统，该许可证确保衍生作品也必须开源，这可以确保衍生版的代码也可被社区审查。
+[Apache-2.0](LICENSE)
+本项目采用 Apache License 2.0。选择它的理由：
+1. 宽松许可：允许使用、修改、再分发与商业使用，包括闭源衍生作品。
+2. 第 3 条提供明确的专利授权，对贡献者和使用者都构成保护。
+3. 与 GPLv3 兼容：Apache-2.0 代码可以并入 GPLv3 项目（反向不成立）。
+4. 要求保留版权与署名声明，但**不要求**衍生作品继续开源。
+
+> 注意：这一点与之前的 GPLv3 选择不同。Apache-2.0 不带 copyleft，下游分叉在保留声明的前提下可以用其他条款分发。
 
 ## 贡献指南
 详见 [CONTRIBUTING.md](CONTRIBUTING.md)
